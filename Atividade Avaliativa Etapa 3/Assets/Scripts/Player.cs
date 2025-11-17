@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : Personagem
 {
@@ -16,46 +17,49 @@ public class Player : Personagem
     }
     void Update()
     {
+        
+        
         amdando = false;
         
-        //direita
-        if (arma.rotation.eulerAngles.z > -90 
-            && arma.rotation.eulerAngles.z < 90)
+        Vector3 mouseScreenPosition = Input.mousePosition;
+        mouseScreenPosition.z = Camera.main.nearClipPlane + 1f; 
+
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
+
+        
+        if ( mouseWorldPosition.x > transform.position.x)
         {
             spriteRenderer.flipX = false;
         }
         
-        //esquerda
-        if (arma.rotation.eulerAngles.z > 90 
-            && arma.rotation.eulerAngles.z < 270)
+       
+        if ( mouseWorldPosition.x < transform.position.x)
         {
             spriteRenderer.flipX = true;
         }
 
-
-
-        //movimento para a esquerda
+        
         if (Input.GetKey(KeyCode.A))
         {
             transform.position -= new Vector3(getVelocidade() * Time.deltaTime, 0, 0);  
             amdando = true;
         }
 
-        //movimento para a direita
+       
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(getVelocidade() * Time.deltaTime, 0, 0);
             amdando = true;
         }
         
-        //movimento para a Cima
+      
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(0, getVelocidade() * Time.deltaTime, 0); 
             amdando = true;
         }
         
-        //movimento para a Cima
+       
         if (Input.GetKey(KeyCode.S))
         {
             transform.position -= new Vector3(0, getVelocidade() * Time.deltaTime, 0);  
