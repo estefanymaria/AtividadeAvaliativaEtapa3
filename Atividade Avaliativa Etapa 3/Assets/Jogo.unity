@@ -1251,30 +1251,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890001001}
   m_CullTransparentMesh: 1
---- !u!1 &1962367428 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3695134633096116912, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
-  m_PrefabInstance: {fileID: 4178786727705673119}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1962367433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962367428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff21effc9f1d4d44a8180488a3f156a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vida: 10
-  energia: 100
-  velocidade: 5
-  dano: 1
-  raioDeVisao: 1
-  _visaoCollider2D: {fileID: 0}
-  posicaoDoPlayer: {fileID: 0}
 --- !u!1 &2033392214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1466,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1556644859293275980, guid: efdb685bf11c8cc4c8eb93a95c619926, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4748055606317210351, guid: efdb685bf11c8cc4c8eb93a95c619926, type: 3}
       propertyPath: m_Constraints
       value: 4
@@ -1618,10 +1598,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3485528789628671511, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3695134633096116912, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
       propertyPath: m_Name
       value: Inimigo
@@ -1667,16 +1643,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6642346197906948579, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
-      propertyPath: m_FlipX
-      value: 0
+      propertyPath: m_Size.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6642346197906948579, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5953439214378204596, guid: dfa6f51e01ba51e4887cc8c3caed1e6d, type: 3}
+    - target: {fileID: 6642346197906948579, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3695134633096116912, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1962367433}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c270e691e0b93949b8520612ea17522, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
