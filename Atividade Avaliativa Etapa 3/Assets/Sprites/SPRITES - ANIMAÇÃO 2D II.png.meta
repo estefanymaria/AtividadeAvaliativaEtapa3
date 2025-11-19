@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "SPRITES - ANIMA\xC7\xC3O 2D II_0": 1973089148687800334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

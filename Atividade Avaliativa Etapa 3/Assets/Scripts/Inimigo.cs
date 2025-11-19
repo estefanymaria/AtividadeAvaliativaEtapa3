@@ -32,7 +32,7 @@ public class Inimigo : Personagem
         
         if (posicaoDoPlayer == null)
         {
-            posicaoDoPlayer =  GameObject.Find("Player").transform;
+            posicaoDoPlayer =  GameObject.FindWithTag("Player").transform;
         }
         
         raioDeVisao = _visaoCollider2D.radius;
