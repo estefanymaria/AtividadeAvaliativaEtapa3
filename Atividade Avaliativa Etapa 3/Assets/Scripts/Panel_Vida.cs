@@ -4,23 +4,26 @@ using UnityEngine.UI;
 
 public class Panel_Vida : MonoBehaviour
 {
+    public Slider sliderVidasRestantes;
+    
     public Personagem personagem;
-
-    public Slider sliderVidas;
-    public Slider sliderEnergia;
+    [SerializeField] private int vidasRestantes;
 
     void Start()
     {
-        sliderVidas.minValue = 0;
-        sliderVidas.maxValue = personagem.getVida();
-
-        sliderEnergia.minValue = 0;
-        sliderEnergia.maxValue = personagem.getEnergia();
+        if (personagem != null & sliderVidasRestantes != null)
+        {
+            sliderVidasRestantes.minValue = 0;
+            sliderVidasRestantes.maxValue = personagem.getVida();
+        }
     }
 
     void Update()
     {
-        sliderVidas.value = personagem.getVida();
-        sliderEnergia.value = personagem.getEnergia();
+        if (sliderVidasRestantes != null)
+        {
+            vidasRestantes = personagem.getVida();
+            sliderVidasRestantes.value = vidasRestantes;
+        }
     }
 }
