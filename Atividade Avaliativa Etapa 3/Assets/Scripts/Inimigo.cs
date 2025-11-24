@@ -14,6 +14,8 @@ public class Inimigo : Personagem
 
     private bool andando = false;
     
+    public AudioSource audioSource;
+    
     public void setDano(int dano)
     {
         this.dano = dano;
@@ -36,6 +38,8 @@ public class Inimigo : Personagem
         }
         
         raioDeVisao = _visaoCollider2D.radius;
+        
+        audioSource = GetComponent<AudioSource>();
 
     }
     void Update()
@@ -81,6 +85,11 @@ public class Inimigo : Personagem
     {
         Destroy(gameObject);
         Debug.Log("Teste...");
+    }
+
+    public void playAudio()
+    {
+        audioSource.Play();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
