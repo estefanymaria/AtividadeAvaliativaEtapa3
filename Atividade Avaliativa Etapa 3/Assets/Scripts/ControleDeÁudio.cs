@@ -1,42 +1,48 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
-using TMPro;
 
-public class ControleDeÁudio : MonoBehaviour
+public class ControleDeAudio : MonoBehaviour
 {
-    public int volume;
-    public int volumeSFX;
-    public bool musica;
+    public AudioMixer audioMixer;
+    float masterVolume = 0;
 
-    public Slider volumeSlider;
-    public Slider volumeSFXSlider;
-    public Toggle toggleMusica;
-    public TMP_Text textoMusica;
-
+    public TMP_Text texto;
+    public Slider slider;
+    
     void Start()
     {
-        musica = toggleMusica.isOn;
-        volume = (int)volumeSlider.value;
-        volumeSFX = (int)volumeSFXSlider.value;
+        audioMixer.GetFloat("Master", out masterVolume);
+        
+        slider.value = masterVolume;
     }
-
     void Update()
     {
-        musica = toggleMusica.isOn;
-        volume = (int)volumeSlider.value;
-        volumeSFX = (int)volumeSFXSlider.value;
-
-        if (musica == true)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            textoMusica.text = "LIGADO";
-            textoMusica.color = Color.green;
+            masterVolume += 1f;
+            audioMixer.SetFloat("Master", masterVolume);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            masterVolume -= 1f;
+            audioMixer.SetFloat("Master", masterVolume);
+        }
+
+
+        masterVolume = slider.value;
+        texto.text = masterVolume.ToString();
+
+        if (masterVolume <= -20)
+        {
+            audioMixer.SetFloat("Master", -80f); 
         }
         else
         {
-            textoMusica.text = "DESLIGADO";
-            textoMusica.color = Color.red;
+            audioMixer.SetFloat("Master", masterVolume);  
         }
+        
     }
 }

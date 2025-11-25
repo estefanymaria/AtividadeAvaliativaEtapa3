@@ -3,6 +3,8 @@ using UnityEngine;
 public class Inimigo : Personagem
 {
     [SerializeField] private int dano = 1;
+
+    public int pontos = 1;
     
     public float raioDeVisao = 1;
     public CircleCollider2D _visaoCollider2D;
@@ -83,6 +85,8 @@ public class Inimigo : Personagem
 
     public void desativa()
     {
+        GameObject.Find("Pontuacao").GetComponent<Pontuacao>().pontos += pontos;
+        
         Destroy(gameObject);
         Debug.Log("Teste...");
     }
