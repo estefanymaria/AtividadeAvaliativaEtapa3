@@ -240,7 +240,7 @@ MonoBehaviour:
   vida: 8
   energia: 80
   velocidade: 1
-  dano: 8
+  dano: 3
   pontos: 5
   raioDeVisao: 1
   _visaoCollider2D: {fileID: 647977902754758818}

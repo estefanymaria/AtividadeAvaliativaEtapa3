@@ -315,7 +315,7 @@ MonoBehaviour:
   vida: 5
   energia: 50
   velocidade: 2
-  dano: 5
+  dano: 2
   pontos: 3
   raioDeVisao: 1
   _visaoCollider2D: {fileID: 2027064266798204655}
